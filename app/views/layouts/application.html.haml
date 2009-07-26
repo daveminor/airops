@@ -53,5 +53,7 @@
             %li#rss= link_to :rss.l, @rss_url, {:title => @rss_title}
 
         %p
-          = :community_tagline.l
+          %a{ :href => "http://sus4.net", :target => "_blank" }
+            %img{ :src => "http://sus4.net/images/sus4logosm.png" } 
+          
     = render :partial => "shared/google_analytics"
