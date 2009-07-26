@@ -58,17 +58,5 @@ namespace :deploy do
     deploy.mongrel.stop
   end
 
-  namespace :web do
-    desc "UNTIL and REASON can be passed"  
-    task :disable, :roles => :app do
-      on_rollback { delete "#{shared_path}/system/maintenance.html" }
-
-      maintenance = render("./app/views/layouts/maintenance.rhtml",
-                           :deadline => ENV['UNTIL'],
-                           :reason => ENV['REASON'])
-
-      put maintenance, "#{shared_path}/system/maintenance.html", :mode => 0644
-    end
-  end
 end
 
