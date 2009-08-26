@@ -12,6 +12,8 @@
     = render :partial => "shared/scripts_and_styles"
     - if @rss_title && @rss_url
       = auto_discovery_link_tag(:rss, @rss_url, {:title => @rss_title})
+
+    = render :partial => "shared/google_analytics"
     
   %body
     #doc2{:class => "yui-t#{@sidebar_left ? 3 : 6}"}
@@ -56,4 +58,3 @@
           %a{ :href => "http://sus4.net", :target => "_blank" }
             %img{ :src => "http://sus4.net/images/sus4logosm.png" } 
           
-    = render :partial => "shared/google_analytics"
